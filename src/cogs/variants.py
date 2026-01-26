@@ -964,7 +964,10 @@ async def setup(bot: Bot):
                 reverse=True
             ))
             try:
-                selection = np.arange(len(colors))[color_slice]
+                if type(color_slice) != slice:
+                    selection = np.array(color_slice)
+                else:
+                    selection = np.arange(len(colors))[color_slice]
             except IndexError:
                 raise AssertionError(f'The color slice `{color_slice}` is invalid.')
             if isinstance(selection, np.ndarray):
@@ -1026,7 +1029,7 @@ async def setup(bot: Bot):
         clip_poly = np.tile(clip_poly, (4, 1, 1)).T
         return np.multiply(sprite, clip_poly, casting="unsafe").astype(np.uint8)
 
-    @SpriteVariantFactory.define_variant(names=["croppoly", ])
+    @SpriteVariantFactory.define_variant(names=["snippoly", ])
     async def snippoly(
         sprite: NumpySprite, ctx: SpriteVariantContext,
         point_coords: list[int]
