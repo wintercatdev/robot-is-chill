@@ -85,6 +85,8 @@ class TileSkeleton:
         for i, (raw_var, split) in enumerate(split_vars):
             split_vars_ex.append((raw_var, split))
         for raw_var, split in split_vars_ex:
+            if raw_var.startswith('.'):
+                raw_var = raw_var[1:]
             var = bot.parse_variant(raw_var, out.palette)
             if var is None:
                 raise errors.UnknownVariant(raw_var)
