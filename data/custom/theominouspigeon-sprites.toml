@@ -164,8 +164,8 @@ panel = {sprite = "panel", color = [4, 3], tiling = "tiling"}
 
 text_panel = {sprite = "text_panel", color = [4, 3], tiling = "none"}
 
-it'st = {sprite = "it'st", color = [3, 4], tiling = "character"}
+"it'st" = {sprite = "it'st", color = [3, 4], tiling = "character"}
 
-text_it'st = {sprite = "text_it'st", color = [3, 4], tiling = "none"}
+"text_it'st" = {sprite = "text_it'st", color = [3, 4], tiling = "none"}
 
 person = {sprite = "person", color = [2, 3], tiling = "character"}
